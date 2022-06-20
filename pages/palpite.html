@@ -22,7 +22,7 @@
 	 <label>JOGOS DISPONIVEIS</label><br />
 			<div>
 				<label>FLA</label>
-				<input type="number" value="2"/>
+				<input type="number" />
 				<label>X</label>
 				<input />
 				<label>FLU</label>
@@ -83,6 +83,14 @@
 				<input />
 				<label>FLU</label>
 			</div>	
+
+			<div>
+				<label>FLA</label>
+				<input />
+				<label>X</label>
+				<input />
+				<label>FLU</label>
+			</div>
 
 			<div>
 				<label>FLA</label>
@@ -93,10 +101,12 @@
 			</div>
 			
 	 </form>
-	 <input class="btnSalvar" type="button" value="SALVAR +" onClick="save()"/>
+	 <input class="btnSalvar" type="button" value="SALVAR +" onClick="salvar()"/>
    </div>
 	
-	
+   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
 <script src="../scripts/palpite.js"></script>
 </body>
 </html>

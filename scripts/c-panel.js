@@ -1,102 +1,332 @@
-function save() {
-let time1 = document.querySelectorAll("input")[0].value;
-let time2 = document.querySelectorAll("input")[1].value;
-let time3 = document.querySelectorAll("input")[2].value;
-let time4 = document.querySelectorAll("input")[3].value;
-let time5 = document.querySelectorAll("input")[4].value;
-let time6 = document.querySelectorAll("input")[5].value;
-let time7 = document.querySelectorAll("input")[6].value;
-let time8 = document.querySelectorAll("input")[7].value;
-let time9 = document.querySelectorAll("input")[8].value;
-let time10 = document.querySelectorAll("input")[9].value;
-let time11 = document.querySelectorAll("input")[10].value;
-let time12 = document.querySelectorAll("input")[11].value;
-let time13 = document.querySelectorAll("input")[12].value;
-let time14 = document.querySelectorAll("input")[13].value;
-let time15 = document.querySelectorAll("input")[14].value;
-let time16 = document.querySelectorAll("input")[15].value;
-let time17 = document.querySelectorAll("input")[16].value;
-let time18 = document.querySelectorAll("input")[17].value;
-let time19 = document.querySelectorAll("input")[18].value;
+const log = console.log;
 
-console.log(time1,time2);
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnl9WC5RY8bSf3k7lKPg8Cvr97lqiI6dk",
+    authDomain: "palpite-ex.firebaseapp.com",
+    projectId: "palpite-ex",
+    storageBucket: "palpite-ex.appspot.com",
+    messagingSenderId: "596394361681",
+    appId: "1:596394361681:web:98e875cf810b7a9b42c970",
+    measurementId: "G-T8KRCS401B"
+  };
 
-localStorage.setItem('timeZ1', time1);
-localStorage.setItem('timeZ2', time2);
-localStorage.setItem('timeZ3', time3);
-localStorage.setItem('timeZ4', time4);
-localStorage.setItem('timeZ5', time5);
-localStorage.setItem('timeZ6', time6);
-localStorage.setItem('timeZ7', time7);
-localStorage.setItem('timeZ8', time8);
-localStorage.setItem('timeZ9', time9);
-localStorage.setItem('timeZ10', time10);
-localStorage.setItem('timeZ11', time11);
-localStorage.setItem('timeZ12', time12);
-localStorage.setItem('timeZ13', time13);
-localStorage.setItem('timeZ14', time14);
-localStorage.setItem('timeZ15', time15);
-localStorage.setItem('timeZ16', time16);
-localStorage.setItem('timeZ17', time17);
-localStorage.setItem('timeZ18', time18);
+  //Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
+  //Initialize Cloud Firestore
+  const db = firebase.firestore();
+
+  log('conectado');
+   
+function salvar() {
+    db.collection('manager').add({
+        user: 'rodada', id: 01,
+        time1: 0, time2: 0, time3: 0, time4: 0, time5: 0,
+        time6: 0, time7: 0, time8: 0, time9: 0, time10: 0,      
+        time11: 0, time12: 0, time13: 0, time14: 0, time15: 0,
+        time16: 0, time17: 0, time18: 0, time19: 0, time20: 0,      
+    })
+    .then((docRef) => {
+        log("salvo: ", docRef.id);
+    })
+    .catch((e) => {
+        console.e("erro ao salvar: ", e);
+    })
 };
 
-const timeZ1 = localStorage.getItem('timeZ1');
-const timeZ2 = localStorage.getItem('timeZ1');
-const timeZ3 = localStorage.getItem('timeZ1');
-const timeZ4 = localStorage.getItem('timeZ1');
-const timeZ5 = localStorage.getItem('timeZ1');
-const timeZ6 = localStorage.getItem('timeZ1');
-const timeZ7 = localStorage.getItem('timeZ1');
-const timeZ8 = localStorage.getItem('timeZ1');
-const timeZ9 = localStorage.getItem('timeZ1');
-const timeZ10 = localStorage.getItem('timeZ1');
-const timeZ11 = localStorage.getItem('timeZ1');
-const timeZ12 = localStorage.getItem('timeZ1');
-const timeZ13 = localStorage.getItem('timeZ1');
-const timeZ14 = localStorage.getItem('timeZ1');
-const timeZ15 = localStorage.getItem('timeZ1');
-const timeZ16 = localStorage.getItem('timeZ1');
-const timeZ17 = localStorage.getItem('timeZ1');
-const timeZ18 = localStorage.getItem('timeZ1');
+let array = [];
+function tabelaTemporeal() {
+const store = db.collection('manager').get();
+		store.then((query) => {
+			query.forEach((doc) => {
+				array.push(doc.data());
+				
+			});
+		
+			document.querySelectorAll("input")[0].value = array[0].time1;
+			document.querySelectorAll("input")[1].value = array[0].time2;
+			document.querySelectorAll("input")[2].value = array[0].time3;
+			document.querySelectorAll("input")[3].value = array[0].time4;
+			document.querySelectorAll("input")[4].value = array[0].time5;
+			document.querySelectorAll("input")[5].value = array[0].time6;
+			document.querySelectorAll("input")[6].value = array[0].time7;
+			document.querySelectorAll("input")[7].value = array[0].time8;
+			document.querySelectorAll("input")[8].value = array[0].time9;
+			document.querySelectorAll("input")[9].value = array[0].time10;
+			document.querySelectorAll("input")[10].value = array[0].time11;
+			document.querySelectorAll("input")[11].value = array[0].time12;
+			document.querySelectorAll("input")[12].value = array[0].time13;
+			document.querySelectorAll("input")[13].value = array[0].time14;
+			document.querySelectorAll("input")[14].value = array[0].time15;
+			document.querySelectorAll("input")[15].value = array[0].time16;
+			document.querySelectorAll("input")[16].value = array[0].time17;
+			document.querySelectorAll("input")[17].value = array[0].time18;
+			document.querySelectorAll("input")[18].value = array[0].time19;
+			document.querySelectorAll("input")[19].value = array[0].time20;
+					
+		});
+}
+
+tabelaTemporeal();
+
+
+var arrayClient = [];
+
+function andamento() {
+	const store = db.collection('john-doe').get();
+	 store.then((query) => {
+		query.forEach((doc) => {
+
+			
+			var value = doc.data();
+			
+			arrayClient.push(value);
+	        log(arrayClient)
+			
+		})			
+			var result = {
+				a: parseInt(array[0].time1),
+				b: parseInt(array[0].time2),
+				c: parseInt(array[0].time3),
+				d: parseInt(array[0].time4),
+				e: parseInt(array[0].time5),
+				f: parseInt(array[0].time6),
+				g: parseInt(array[0].time7),
+				h: parseInt(array[0].time8),
+				i: parseInt(array[0].time9),
+				j: parseInt(array[0].time10),
+				k: parseInt(array[0].time11),
+				l: parseInt(array[0].time12),
+				m: parseInt(array[0].time13),
+				n: parseInt(array[0].time14),
+				o: parseInt(array[0].time15),
+				p: parseInt(array[0].time16),
+				q: parseInt(array[0].time17),
+				r: parseInt(array[0].time18),
+				s: parseInt(array[0].time19),
+				t: parseInt(array[0].time20),
+			}
+				//log(resultAtual.b)
+				
+				var palpit = {
+				 a: arrayClient[0].time1, b: arrayClient[0].time2, c: arrayClient[0].time3, d: arrayClient[0].time4,
+				 e: arrayClient[0].time5, f: arrayClient[0].time6, g: arrayClient[0].time7, h: arrayClient[0].time8,				
+				 i: arrayClient[0].time9, j: arrayClient[0].time10, k: arrayClient[0].time11, l: arrayClient[0].time12,
+				 m: arrayClient[0].time13, n: arrayClient[0].time14, o: arrayClient[0].time15, p: arrayClient[0].time16,
+				 q: arrayClient[0].time17, r: arrayClient[0].time18, s: arrayClient[0].time19, t: arrayClient[0].time20,
+				
+			    }
+
+		 		 var palpit2 = {
+					a: arrayClient[1].time1, b: arrayClient[1].time2, c: arrayClient[1].time3, d: arrayClient[1].time4,
+					e: arrayClient[1].time5, f: arrayClient[1].time6, g: arrayClient[1].time7, h: arrayClient[1].time8,				
+					i: arrayClient[1].time9, j: arrayClient[1].time10, k: arrayClient[1].time11, l: arrayClient[1].time12,
+					m: arrayClient[1].time13, n: arrayClient[1].time14, o: arrayClient[1].time15, p: arrayClient[1].time16,
+					q: arrayClient[1].time17, r: arrayClient[1].time18, s: arrayClient[1].time19, t: arrayClient[1].time20,
+			    } 
+
+		 		var palpit3 = {
+					a: arrayClient[2].time1, b: arrayClient[2].time2, c: arrayClient[2].time3, d: arrayClient[2].time4,
+					e: arrayClient[2].time5, f: arrayClient[2].time6, g: arrayClient[2].time7, h: arrayClient[2].time8,				
+					i: arrayClient[2].time9, j: arrayClient[2].time10, k: arrayClient[2].time11, l: arrayClient[2].time12,
+					m: arrayClient[2].time13, n: arrayClient[2].time14, o: arrayClient[2].time15, p: arrayClient[2].time16,
+					q: arrayClient[2].time17, r: arrayClient[2].time18, s: arrayClient[2].time19, t: arrayClient[2].time20,
+			    } 
+
+		 		var palpit4 = {
+					a: arrayClient[3].time1, b: arrayClient[3].time2, c: arrayClient[3].time3, d: arrayClient[3].time4,
+					e: arrayClient[3].time5, f: arrayClient[3].time6, g: arrayClient[3].time7, h: arrayClient[3].time8,				
+					i: arrayClient[3].time9, j: arrayClient[3].time10, k: arrayClient[3].time11, l: arrayClient[3].time12,
+					m: arrayClient[3].time13, n: arrayClient[3].time14, o: arrayClient[3].time15, p: arrayClient[3].time16,
+					q: arrayClient[3].time17, r: arrayClient[3].time18, s: arrayClient[3].time19, t: arrayClient[3].time20,
+			    } 
+
+		 		var palpit5 = {
+					a: arrayClient[4].time1, b: arrayClient[4].time2, c: arrayClient[4].time3, d: arrayClient[4].time4,
+					e: arrayClient[4].time5, f: arrayClient[4].time6, g: arrayClient[4].time7, h: arrayClient[4].time8,				
+					i: arrayClient[4].time9, j: arrayClient[4].time10, k: arrayClient[4].time11, l: arrayClient[4].time12,
+					m: arrayClient[4].time13, n: arrayClient[4].time14, o: arrayClient[4].time15, p: arrayClient[4].time16,
+					q: arrayClient[4].time17, r: arrayClient[4].time18, s: arrayClient[4].time19, t: arrayClient[4].time20,
+			    } 
+
+		 		var palpit6 = {
+					a: arrayClient[5].time1, b: arrayClient[5].time2, c: arrayClient[5].time3, d: arrayClient[5].time4,
+					e: arrayClient[5].time5, f: arrayClient[5].time6, g: arrayClient[5].time7, h: arrayClient[5].time8,				
+					i: arrayClient[5].time9, j: arrayClient[5].time10, k: arrayClient[5].time11, l: arrayClient[5].time12,
+					m: arrayClient[5].time13, n: arrayClient[5].time14, o: arrayClient[5].time15, p: arrayClient[5].time16,
+					q: arrayClient[5].time17, r: arrayClient[5].time18, s: arrayClient[5].time19, t: arrayClient[5].time20,
+			    } 
+
+
+		function status1(pa, pb, ra, rb, cel) {
+	 		  if(pa == ra && pb == rb) {
+				var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+				 document.querySelectorAll('td')[cel].innerHTML = pont + 10;			 
+					log("placar exato: 10 pontos");
+				}else if(ra >= pa && rb < pa || rb >= pb && ra < pb) {
+				 var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+				  document.querySelectorAll('td')[cel].innerHTML = pont + 5;
+					log("placar vitoria: 5 pontos");
+				}else if(ra == rb) {
+					log("empate!")
+				}else if(ra > rb || rb > ra) {
+					log("derrota!");
+				}else{log("perdido!")} 
+			};
+
+			
+		 	status1(palpit.a, palpit.b, result.a, result.b, 4);
+			status1(palpit.c, palpit.d, result.c, result.d, 4);
+			status1(palpit.e, palpit.f, result.e, result.f, 4);
+			status1(palpit.g, palpit.h, result.g, result.h, 4);
+			status1(palpit.i, palpit.j, result.i, result.j, 4);
+			status1(palpit.k, palpit.l, result.k, result.l, 4);
+			status1(palpit.m, palpit.n, result.m, result.n, 4);
+			status1(palpit.o, palpit.p, result.o, result.p, 4);
+			status1(palpit.q, palpit.r, result.q, result.r, 4);
+			status1(palpit.s, palpit.t, result.s, result.t, 4); 
+			
+
+			
+		 	status1(palpit2.a, palpit2.b, result.a, result.b, 10);
+			status1(palpit2.c, palpit2.d, result.c, result.d, 10);
+			status1(palpit2.e, palpit2.f, result.e, result.f, 10);
+			status1(palpit2.g, palpit2.h, result.g, result.h, 10);
+			status1(palpit2.i, palpit2.j, result.i, result.j, 10);
+			status1(palpit2.k, palpit2.l, result.k, result.l, 10);
+			status1(palpit2.m, palpit2.n, result.m, result.n, 10);
+			status1(palpit2.o, palpit2.p, result.o, result.p, 10);
+			status1(palpit2.q, palpit2.r, result.q, result.r, 10);
+			status1(palpit2.s, palpit2.t, result.s, result.t, 10);  
+			
+		 	status1(palpit3.a, palpit3.b, result.a, result.b, 16);
+			status1(palpit3.c, palpit3.d, result.c, result.d, 16);
+			status1(palpit3.e, palpit3.f, result.e, result.f, 16);
+			status1(palpit3.g, palpit3.h, result.g, result.h, 16);
+			status1(palpit3.i, palpit3.j, result.i, result.j, 16);
+			status1(palpit3.k, palpit3.l, result.k, result.l, 16);
+			status1(palpit3.m, palpit3.n, result.m, result.n, 16);
+			status1(palpit3.o, palpit3.p, result.o, result.p, 16);
+			status1(palpit3.q, palpit3.r, result.q, result.r, 16);
+			status1(palpit3.s, palpit3.t, result.s, result.t, 16);  
+		    
+		 	status1(palpit4.a, palpit4.b, result.a, result.b, 22);
+			status1(palpit4.c, palpit4.d, result.c, result.d, 22);
+			status1(palpit4.e, palpit4.f, result.e, result.f, 22);
+			status1(palpit4.g, palpit4.h, result.g, result.h, 22);
+			status1(palpit4.i, palpit4.j, result.i, result.j, 22);
+			status1(palpit4.k, palpit4.l, result.k, result.l, 22);
+			status1(palpit4.m, palpit4.n, result.m, result.n, 22);
+			status1(palpit4.o, palpit4.p, result.o, result.p, 22);
+			status1(palpit4.q, palpit4.r, result.q, result.r, 22);
+			status1(palpit4.s, palpit4.t, result.s, result.t, 22);
+	     
+		 	status1(palpit5.a, palpit5.b, result.a, result.b, 28);
+			status1(palpit5.c, palpit5.d, result.c, result.d, 28);
+			status1(palpit5.e, palpit5.f, result.e, result.f, 28);
+			status1(palpit5.g, palpit5.h, result.g, result.h, 28);
+			status1(palpit5.i, palpit5.j, result.i, result.j, 28);
+			status1(palpit5.k, palpit5.l, result.k, result.l, 28);
+			status1(palpit5.m, palpit5.n, result.m, result.n, 28);
+			status1(palpit5.o, palpit5.p, result.o, result.p, 28);
+			status1(palpit5.q, palpit5.r, result.q, result.r, 28);
+			status1(palpit5.s, palpit5.t, result.s, result.t, 28);  
+		    
+		 	status1(palpit6.a, palpit6.b, result.a, result.b, 34);
+			status1(palpit6.c, palpit6.d, result.c, result.d, 34);
+			status1(palpit6.e, palpit6.f, result.e, result.f, 34);
+			status1(palpit6.g, palpit6.h, result.g, result.h, 34);
+			status1(palpit6.i, palpit6.j, result.i, result.j, 34);
+			status1(palpit6.k, palpit6.l, result.k, result.l, 34);
+			status1(palpit6.m, palpit6.n, result.m, result.n, 34);
+			status1(palpit6.o, palpit6.p, result.o, result.p, 34);
+			status1(palpit6.q, palpit6.r, result.q, result.r, 34);
+			status1(palpit6.s, palpit6.t, result.s, result.t, 34);  
+		   
+ 
+		
+	 })
+	 .catch((e) => {
+		log.e("falha: ", e);
+	 })
+}
+
+andamento(); 
 
 
 
-let p1 = localStorage.getItem('time1');
-let p2 = localStorage.getItem('time2');
-let p3 = localStorage.getItem('time1');
-let p4 = localStorage.getItem('time2');
-let p5 = localStorage.getItem('time1');
-let p6 = localStorage.getItem('time2');
-let p7 = localStorage.getItem('time1');
-let p8 = localStorage.getItem('time2');
-let p9 = localStorage.getItem('time1');
-let p10 = localStorage.getItem('time2');
-let p11 = localStorage.getItem('time1');
-let p12 = localStorage.getItem('time2');
-let p13 = localStorage.getItem('time1');
-let p14 = localStorage.getItem('time2');
-let p15 = localStorage.getItem('time1');
-let p16 = localStorage.getItem('time2');
-let p17 = localStorage.getItem('time1');
-let p18 = localStorage.getItem('time2');
+
+function update() {
+
+	var arr = [document.querySelectorAll("input")[0].value,
+	document.querySelectorAll("input")[1].value,
+	document.querySelectorAll("input")[2].value,
+	document.querySelectorAll("input")[3].value,
+	document.querySelectorAll("input")[4].value,
+	document.querySelectorAll("input")[5].value,
+	document.querySelectorAll("input")[6].value,
+	document.querySelectorAll("input")[7].value,
+	document.querySelectorAll("input")[8].value,
+	document.querySelectorAll("input")[9].value,
+	document.querySelectorAll("input")[10].value,
+	document.querySelectorAll("input")[11].value,
+	document.querySelectorAll("input")[12].value,
+	document.querySelectorAll("input")[13].value,
+	document.querySelectorAll("input")[14].value,
+	document.querySelectorAll("input")[15].value,
+	document.querySelectorAll("input")[16].value,
+	document.querySelectorAll("input")[17].value,
+	document.querySelectorAll("input")[18].value,
+	document.querySelectorAll("input")[19].value,
+	];
+
+			log(arr[0])
+				
+	var novo = db.collection('manager').doc('DSCoDZVcMv2s4sjoc4Mz');
+	novo.update({
+		time1: arr[0], time2: arr[1], time3: arr[2], time4: arr[3], time5: arr[4],
+        time6: arr[5], time7: arr[6], time8: arr[7], time9: arr[8], time10: arr[9],      
+        time11: arr[10], time12: arr[11], time13: arr[12], time14: arr[13], time15: arr[14],
+        time16: arr[15], time17: arr[16], time18: arr[17], time19: arr[18], time20: arr[19]
+	})
+   .then(() => {
+	log("alterado com sucesso!");
+	  location.reload(); 
+   })
+   .catch((e) => {
+	log.e("falha na alteração: ", e);
+   })
+};
 
 
-if(p1 == timeZ1) {
-	console.log("true")
-}else{console.log("false")}
 
 
 
-// if(pl1 == 2 && pl2 == 3) {
-	// console.log("10 pontos");
-// }else if(pl1 <= 2 && pl2 > 2) {
-	// console.log("10 pontos");
-// }else if (pl1 > 2 && pl2 <=2){
-	// console.log("0 pontos");
-// }else if (pl1 == 2 && pl2 ==2){
-	// console.log("0 pontos");
-// }
-// let time1 = document.querySelectorAll("input")[0].value;
-// console.log(time1);
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

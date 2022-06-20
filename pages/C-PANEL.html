@@ -22,22 +22,6 @@
 	 <label>C-PANEL</label><br />
 			<div>
 				<label>FLA</label>
-				<input value="10"/>
-				<label>X</label>
-				<input />
-				<label>FLU</label>
-			</div>
-			
-			<div>
-				<label>FLA</label>
-				<input />
-				<label>X</label>
-				<input />
-				<label>FLU</label>
-			</div>	
-
-			<div>
-				<label>FLA</label>
 				<input />
 				<label>X</label>
 				<input />
@@ -90,10 +74,34 @@
 				<label>X</label>
 				<input />
 				<label>FLU</label>
+			</div>
+			
+			<div>
+				<label>FLA</label>
+				<input />
+				<label>X</label>
+				<input />
+				<label>FLU</label>
+			</div>	
+
+			<div>
+				<label>FLA</label>
+				<input />
+				<label>X</label>
+				<input />
+				<label>FLU</label>
+			</div>
+
+			<div>
+				<label>CAP</label>
+				<input />
+				<label>X</label>
+				<input />
+				<label>SAO</label>
 			</div>
 			
 	 </form>
-	 <input class="btnSalvar" type="button" value="SALVAR +" onClick="save()"/>
+	 <input class="btnSalvar" type="button" value="ATUALIZAR +" onClick="update()"/>
 	 
 	 <table>
 		 <thead>
@@ -125,7 +133,7 @@
 			 <td>John Doe</td>
 			 <td>teste</td>
 			 <td>2</td>
-			 <td>10</td>
+			 <td>0</td>
 			 <td>pendente</td>
 		 </tr>
 		 
@@ -134,7 +142,7 @@
 			 <td>-</td>
 			 <td>-</td>
 			 <td>-</td>
-			 <td>-</td>
+			 <td>0</td>
 			 <td>-</td>
 		 </tr>
 		 
@@ -143,16 +151,7 @@
 			 <td>-</td>
 			 <td>-</td>
 			 <td>-</td>
-			 <td>-</td>
-			 <td>-</td>
-		 </tr>
-		 
-		 	 <tr>
-		     <td>-</td>
-			 <td>-</td>
-			 <td>-</td>
-			 <td>-</td>
-			 <td>-</td>
+			 <td>0</td>
 			 <td>-</td>
 		 </tr>
 		 
@@ -161,7 +160,16 @@
 			 <td>-</td>
 			 <td>-</td>
 			 <td>-</td>
+			 <td>0</td>
 			 <td>-</td>
+		 </tr>
+		 
+		 	 <tr>
+		     <td>-</td>
+			 <td>-</td>
+			 <td>-</td>
+			 <td>-</td>
+			 <td>0</td>
 			 <td>-</td>
 		 </tr>
 		 
@@ -170,7 +178,7 @@
 			 <td>-</td>
 			 <td>-</td>
 			 <td>-</td>
-			 <td>-</td>
+			 <td>0</td>
 			 <td>-</td>
 		 </tr>
 			
@@ -180,6 +188,8 @@
 	 
    </div>
 	
+   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 	
 <script src="../scripts/c-panel.js"></script>
 </body>
