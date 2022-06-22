@@ -70,7 +70,75 @@ const store = db.collection('manager').get();
 tabelaTemporeal();
 
 
-var arrayClient = [];
+
+function pegarDoc(td, id, cel) {
+   const store = db.collection('john-doe').doc(id);
+    const action = store.get();
+	 
+	action.then((doc) => {
+
+		var result = {
+			a: parseInt(array[0].time1),
+			b: parseInt(array[0].time2),
+			c: parseInt(array[0].time3),
+			d: parseInt(array[0].time4),
+			e: parseInt(array[0].time5),
+			f: parseInt(array[0].time6),
+			g: parseInt(array[0].time7),
+			h: parseInt(array[0].time8),
+			i: parseInt(array[0].time9),
+			j: parseInt(array[0].time10),
+			k: parseInt(array[0].time11),
+			l: parseInt(array[0].time12),
+			m: parseInt(array[0].time13),
+			n: parseInt(array[0].time14),
+			o: parseInt(array[0].time15),
+			p: parseInt(array[0].time16),
+			q: parseInt(array[0].time17),
+			r: parseInt(array[0].time18),
+			s: parseInt(array[0].time19),
+			t: parseInt(array[0].time20),
+		}
+
+		const value = doc.data();
+
+
+		function status(pa, pb, ra, rb, cel) {
+			if(pa == ra && pb == rb) {
+			 var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+			  document.querySelectorAll('td')[cel].innerHTML = pont + 10;			 
+				 
+			 }else if(ra >= pa && rb < pa || rb >= pb && ra < pb) {
+			  var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+			   document.querySelectorAll('td')[cel].innerHTML = pont + 5;
+				 
+			 }else if(ra == rb) {
+				 log("empate!")
+			 }else if(ra > rb || rb > ra) {
+				 log("derrota!");
+			 }else{log("perdido!")} 
+		 };
+
+		 status(value.time1, value.time2, result.a, result.b, td);
+		 status(value.time3, value.time4, result.c, result.d, td);
+		 status(value.time5, value.time6, result.e, result.f, td);
+		 status(value.time6, value.time7, result.g, result.h, td);
+		 status(value.time8, value.time9, result.i, result.j, td);
+		 status(value.time10, value.time11, result.k, result.l, td);
+		 status(value.time12, value.time13, result.m, result.n, td);
+		 status(value.time14, value.time15, result.o, result.p, td);
+		 status(value.time16, value.time17, result.q, result.r, td);
+		 status(value.time18, value.time19, result.s, result.t, td);
+
+		 document.querySelectorAll('td')[cel].innerHTML = value.user;
+		
+		
+	})
+ }
+ pegarDoc(4, 'NqrDaPqosnvtZ5WFC7QW', 0)
+ pegarDoc(10, 'RFM9wbHz0u5iBOnZogYj', 6)
+
+/* var arrayClient = [];
 
 function andamento() {
 	const store = db.collection('john-doe').get();
@@ -78,7 +146,8 @@ function andamento() {
 		query.forEach((doc) => {
 
 			
-			var value = doc.data();
+			var value = doc.data().user;
+			log(value)
 			
 			arrayClient.push(value);
 	        log(arrayClient)
@@ -162,11 +231,11 @@ function andamento() {
 	 		  if(pa == ra && pb == rb) {
 				var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 				 document.querySelectorAll('td')[cel].innerHTML = pont + 10;			 
-					log("placar exato: 10 pontos");
+					
 				}else if(ra >= pa && rb < pa || rb >= pb && ra < pb) {
 				 var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 				  document.querySelectorAll('td')[cel].innerHTML = pont + 5;
-					log("placar vitoria: 5 pontos");
+					
 				}else if(ra == rb) {
 					log("empate!")
 				}else if(ra > rb || rb > ra) {
@@ -249,9 +318,10 @@ function andamento() {
 	 .catch((e) => {
 		log.e("falha: ", e);
 	 })
-}
+} */
 
-andamento(); 
+/*andamento(); */
+
 
 
 
@@ -283,6 +353,7 @@ function update() {
 			log(arr[0])
 				
 	var novo = db.collection('manager').doc('DSCoDZVcMv2s4sjoc4Mz');
+	
 	novo.update({
 		time1: arr[0], time2: arr[1], time3: arr[2], time4: arr[3], time5: arr[4],
         time6: arr[5], time7: arr[6], time8: arr[7], time9: arr[8], time10: arr[9],      
@@ -298,8 +369,11 @@ function update() {
    })
 };
 
+const elClubs = document.getElementById('clubs');
+elClubs.addEventListener("click", () => { location.href="./inserirClub.html" });
 
-
+const elKeys = document.getElementById('keys');
+elKeys.addEventListener("click", () => { location.href="./validaKey.html" });
 
 
 

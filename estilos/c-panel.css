@@ -98,7 +98,6 @@
 		font-size: 15px;
 		padding: 5px;
 		width: 400px;
-	    //border: solid 1px #DDD;
         border-collapse: collapse;
 		font-family: 'Roboto', sans-serif;
 		
@@ -106,6 +105,10 @@
 	
 	table, tr {
 		height: 50px;
+	}
+
+	table {
+		width: 100vw;
 	}
 	
 	.andamento {
@@ -126,5 +129,17 @@
 		font-family: roboto;
 		padding: 5px;
 		
+	}
+
+	.btn-insert {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+		width: 100vw;
+	}
+
+	.btn-insert input {
+		margin: 10px;
 	}
 	

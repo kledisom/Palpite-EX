@@ -42,8 +42,12 @@ var arr = [
   document.querySelectorAll("input")[19].value
 ];
 
+const nome = prompt("Digite seu nome!");
+
 function salvar() {
    
+
+
     var arr = [
         parseInt(document.querySelectorAll("input")[0].value),
         parseInt(document.querySelectorAll("input")[1].value),
@@ -68,7 +72,7 @@ function salvar() {
       ];
 
     db.collection('john-doe').add({
-        user: 'user01',
+        user: nome,
         time1: arr[0], time2: arr[1], time3: arr[2], time4: arr[3], time5: arr[4],
         time6: arr[5], time7: arr[6], time8: arr[7], time9: arr[8], time10: arr[9],      
         time11: arr[10], time12: arr[11], time13: arr[12], time14: arr[13], time15: arr[14],
@@ -76,11 +80,16 @@ function salvar() {
     })
     .then((docRef) => {
         log("salvo: ", docRef.id);
+        
+          swal("Copie a sua chave: ",docRef.id);
+        
     })
     .catch((e) => {
         console.e("erro ao salvar: ", e);
     })
 }
+
+
 
 
 
