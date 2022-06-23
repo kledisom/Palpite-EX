@@ -20,31 +20,7 @@ const log = console.log;
 
 
 
-function update() {
-
-	var arr = [document.querySelectorAll("input")[0].value,
-	document.querySelectorAll("input")[1].value,
-	document.querySelectorAll("input")[2].value,
-	document.querySelectorAll("input")[3].value,
-	document.querySelectorAll("input")[4].value,
-	document.querySelectorAll("input")[5].value,
-	document.querySelectorAll("input")[6].value,
-	document.querySelectorAll("input")[7].value,
-	document.querySelectorAll("input")[8].value,
-	document.querySelectorAll("input")[9].value,
-	document.querySelectorAll("input")[10].value,
-	document.querySelectorAll("input")[11].value,
-	document.querySelectorAll("input")[12].value,
-	document.querySelectorAll("input")[13].value,
-	document.querySelectorAll("input")[14].value,
-	document.querySelectorAll("input")[15].value,
-	document.querySelectorAll("input")[16].value,
-	document.querySelectorAll("input")[17].value,
-	document.querySelectorAll("input")[18].value,
-	document.querySelectorAll("input")[19].value,
-	];
-
-		
+function update() {		
 				
 	var novo = db.collection('manager').doc('times');
 	

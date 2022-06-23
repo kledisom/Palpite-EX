@@ -12,6 +12,6 @@ const pass = document.getElementById('password').value;
 	
 	if(user == nome && pass == senha) {
 		location.href="../pages/C-PANEL.html"
-	}else{console.log('ACESSO NEGADO!')}
+	}else{alert('ACESSO NEGADO!')}
 	
 }

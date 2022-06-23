@@ -1,3 +1,4 @@
+
 const log = console.log;
 
   const firebaseConfig = {
@@ -18,7 +19,7 @@ const log = console.log;
 
   log('conectado');
    
-function salvar() {
+/* function salvar() {
     db.collection('manager').add({
         user: 'rodada', id: 01,
         time1: 0, time2: 0, time3: 0, time4: 0, time5: 0,
@@ -32,7 +33,7 @@ function salvar() {
     .catch((e) => {
         console.e("erro ao salvar: ", e);
     })
-};
+}; */
 
 let array = [];
 function tabelaTemporeal() {
@@ -376,14 +377,57 @@ const elKeys = document.getElementById('keys');
 elKeys.addEventListener("click", () => { location.href="./validaKey.html" });
 
 
+function pegarTime() {
+	const store = db.collection('manager').doc('times');
+	 const action = store.get();
+	  
+   action.then((doc) => { 
+ 
+		const value = doc.data();
+         		
+
+			document.querySelectorAll("label")[1].innerHTML = value.time1;
+		 	document.querySelectorAll("label")[3].innerHTML = value.time2;
+	 		document.querySelectorAll("label")[4].innerHTML = value.time3;
+			document.querySelectorAll("label")[6].innerHTML = value.time4;
+			document.querySelectorAll("label")[7].innerHTML = value.time5;
+			document.querySelectorAll("label")[9].innerHTML = value.time6;
+			document.querySelectorAll("label")[10].innerHTML = value.time7;
+			document.querySelectorAll("label")[12].innerHTML = value.time8;
+			document.querySelectorAll("label")[13].innerHTML = value.time9;
+			document.querySelectorAll("label")[15].innerHTML = value.time10;
+			document.querySelectorAll("label")[16].innerHTML = value.time11;
+			document.querySelectorAll("label")[18].innerHTML = value.time12;
+			document.querySelectorAll("label")[19].innerHTML = value.time13;
+			document.querySelectorAll("label")[21].innerHTML = value.time14
+			document.querySelectorAll("label")[22].innerHTML = value.time15;
+			document.querySelectorAll("label")[24].innerHTML = value.time16;
+			document.querySelectorAll("label")[25].innerHTML = value.time17;
+			document.querySelectorAll("label")[27].innerHTML = value.time18;
+			document.querySelectorAll("label")[28].innerHTML = value.time19;
+			document.querySelectorAll("label")[30].innerHTML = value.time20;  
+		
+				 
+		 
+		})
+}
+
+pegarTime()
 
 
 
 
 
+ 
+
+ 
+
+ 
 
 
-  
+
+
+ 
 
 
 
