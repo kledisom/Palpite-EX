@@ -36,12 +36,14 @@ const log = console.log;
 }; */
 
 let array = [];
+
 function tabelaTemporeal() {
 const store = db.collection('manager').get();
 		store.then((query) => {
 			query.forEach((doc) => {
 				array.push(doc.data());
-				
+
+				 
 			});
 		
 			document.querySelectorAll("input")[0].value = array[0].time1;
@@ -73,6 +75,7 @@ tabelaTemporeal();
 
 
 function pegarDoc(td, id, cel) {
+
    const store = db.collection('john-doe').doc(id);
     const action = store.get();
 	 
@@ -136,8 +139,159 @@ function pegarDoc(td, id, cel) {
 		
 	})
  }
- pegarDoc(4, 'NqrDaPqosnvtZ5WFC7QW', 0)
- pegarDoc(10, 'RFM9wbHz0u5iBOnZogYj', 6)
+
+const key = [];
+
+ function pegarChave() {
+    const store = db.collection('manager').doc('chaves');
+     const action = store.get();
+      
+     action.then((doc) => { 
+   
+      const value = doc.data();
+
+	  key.push(value);        
+	  
+	     if(key[0].chave1 != '') {
+		  pegarDoc(4, key[0].chave1, 0)	  
+		 }
+	     if(key[0].chave2 != '') {
+		  pegarDoc(10, key[0].chave2, 6)	  
+		 }
+		 if(key[0].chave3 != '') {
+		  pegarDoc(16, key[0].chave3, 12)	  
+		 } 
+	     if(key[0].chave4 != '') {
+		  pegarDoc(22, key[0].chave4, 18)	  
+		 }
+	     if(key[0].chave5 != '') {
+		  pegarDoc(28, key[0].chave5, 24)	  
+		 }
+	     if(key[0].chave6 != '') {
+		  pegarDoc(34, key[0].chave6, 30)	  
+		 }
+	     if(key[0].chave7 != '') {
+		  pegarDoc(40, key[0].chave7, 36)	  
+		 }
+	     if(key[0].chave8 != '') {
+		  pegarDoc(46, key[0].chave8, 42)	  
+		 }
+	     if(key[0].chave9 != '') {
+		  pegarDoc(52, key[0].chave9, 48)	  
+		 }
+	     if(key[0].chave10 != '') {
+		  pegarDoc(58, key[0].chave10, 54)	  
+		 }
+      })
+
+
+  }
+
+  pegarChave();
+
+
+  /* if(key[9] == 'none') {
+	pegarDoc(4, key[0], 0)	  
+	pegarDoc(10, key[1], 6)  
+	  pegarDoc(16, key[2], 0)
+	pegarDoc(22, key[3], 6)  
+	 pegarDoc(26, key[4], 0)
+	pegarDoc(32, key[5], 6)  
+	 pegarDoc(38, key[6], 0)
+	pegarDoc(44, key[7], 6)  
+	 pegarDoc(50, key[8], 0)
+	 log("teste") */
+  /* else if(chaves.i == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	pegarDoc(22, chaves.d, 6)  
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.h == '' ) {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	pegarDoc(22, chaves.d, 6)  
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.g == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	pegarDoc(22, chaves.d, 6)  
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.f == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	pegarDoc(22, chaves.d, 6)  
+	 pegarDoc(26, chaves.e, 0)
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.e == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	pegarDoc(22, chaves.d, 6)  
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.d == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.c == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	pegarDoc(10, chaves.b, 6)  
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.b == '') {
+	pegarDoc(4, chaves.a, 0)	  
+	  pegarDoc(16, chaves.c, 0)
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else if(chaves.a == '') {
+	pegarDoc(10, chaves.b, 6)  
+	  pegarDoc(16, chaves.c, 0)
+	 pegarDoc(26, chaves.e, 0)
+	pegarDoc(32, chaves.f, 6)  
+	 pegarDoc(38, chaves.g, 0)
+	pegarDoc(44, chaves.h, 6)  
+	 pegarDoc(50, chaves.i, 0)
+	pegarDoc(56, chaves.j, 6) 
+  }else{log("perdido")} */
+
+
+
 
 /* var arrayClient = [];
 

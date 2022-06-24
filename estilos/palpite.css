@@ -24,6 +24,7 @@
 		width: 100vw;
 		height: 10vh;
 		border-bottom: 1px solid yellow;
+		text-decoration: none;
 	}
 	
 	.btn {

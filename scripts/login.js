@@ -1,6 +1,8 @@
 const nome = 'teste';
 const senha = 123;
 
+const supernome = 'tiago';
+const supersenha = 1234;
 
 
 
@@ -12,6 +14,8 @@ const pass = document.getElementById('password').value;
 	
 	if(user == nome && pass == senha) {
 		location.href="../pages/palpite.html"
-	}else{console.log('ACESSO NEGADO!')}
+	}else if(user == supernome && pass == supersenha) {
+		location.href="../pages/C-PANEL.html"
+	}else{alert('ACESSO NEGADO!')}
 	
 }
