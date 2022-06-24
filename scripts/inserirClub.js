@@ -21,7 +21,30 @@ const log = console.log;
 
 
 function update() {		
-				
+		
+	var arr = [
+      parseInt(document.querySelectorAll("input")[0].value),
+      parseInt(document.querySelectorAll("input")[1].value),
+      parseInt(document.querySelectorAll("input")[2].value),
+      parseInt(document.querySelectorAll("input")[3].value),
+      parseInt(document.querySelectorAll("input")[4].value),
+      parseInt(document.querySelectorAll("input")[5].value),
+      parseInt(document.querySelectorAll("input")[6].value),
+      parseInt(document.querySelectorAll("input")[7].value),
+      parseInt(document.querySelectorAll("input")[8].value),
+      parseInt(document.querySelectorAll("input")[9].value),
+      parseInt(document.querySelectorAll("input")[10].value),
+      parseInt(document.querySelectorAll("input")[11].value),
+      parseInt(document.querySelectorAll("input")[12].value),
+      parseInt(document.querySelectorAll("input")[13].value),
+      parseInt(document.querySelectorAll("input")[14].value),
+      parseInt(document.querySelectorAll("input")[15].value),
+      parseInt(document.querySelectorAll("input")[16].value),
+      parseInt(document.querySelectorAll("input")[17].value),
+      parseInt(document.querySelectorAll("input")[18].value),
+      parseInt(document.querySelectorAll("input")[19].value)
+    ];
+	
 	var novo = db.collection('manager').doc('times');
 	
 	novo.update({
