@@ -42,9 +42,10 @@ var arr = [
   document.querySelectorAll("input")[19].value
 ];
 
-const nome = prompt("Digite seu nome!");
+/*const nome = prompt("Digite seu nome!");*/
 
 function salvar() {
+	const nome = prompt("Digite seu nome!");
     var arr = [
         parseInt(document.querySelectorAll("input")[0].value),
         parseInt(document.querySelectorAll("input")[1].value),
