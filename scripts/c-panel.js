@@ -19,6 +19,7 @@ const log = console.log;
 
   log('conectado');
    
+
 /* function salvar() {
     db.collection('manager').add({
         user: 'rodada', id: 01,
@@ -108,31 +109,48 @@ function pegarDoc(td, id, cel) {
 
 
 		function status(pa, pb, ra, rb, cel) {
-			if(pa == ra && pb == rb) {
+ 			if(pa == ra && pb == rb) {
 			 var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 			  document.querySelectorAll('td')[cel].innerHTML = pont + 10;			 
 				 
-			 }else if(ra >= pa && rb < pa || rb >= pb && ra < pb) {
+			 }
+			 else if(pa > pb && ra > rb || pb > pa && rb > ra) {
 			  var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 			   document.querySelectorAll('td')[cel].innerHTML = pont + 5;
-				 
-			 }else if(ra == rb) {
+			   				 
+			  }
+			  else if(pa > pb && ra < rb || pb > pa && rb < ra) {
+			   var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+			   //document.querySelectorAll('td')[cel].innerHTML = pont + 5;	 	
+			   log("ok") 	
+			   	 
+			 }
+			 else if(pa == pb) {
+				log("solução")
+			 }
+			 else if(pb > pa && rb < ra)
+			  {log("esta correto")}
+			  else if(ra == rb) {
 				 log("empate!")
-			 }else if(ra > rb || rb > ra) {
-				 log("derrota!");
 			 }else{log("perdido!")} 
+ 
+
 		 };
 
+	/* 	 else if(ra >= pa && rb < pa || rb >= pb && ra < pb) {
+			var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+			 document.querySelectorAll('td')[cel].innerHTML = pont + 5; */
+			 
 		 status(value.time1, value.time2, result.a, result.b, td);
-		 status(value.time3, value.time4, result.c, result.d, td);
+	 	 status(value.time3, value.time4, result.c, result.d, td);
 		 status(value.time5, value.time6, result.e, result.f, td);
-		 status(value.time6, value.time7, result.g, result.h, td);
-		 status(value.time8, value.time9, result.i, result.j, td);
+		 status(value.time7, value.time8, result.g, result.h, td);
+		 status(value.time9, value.time10, result.i, result.j, td); 
 		 status(value.time10, value.time11, result.k, result.l, td);
 		 status(value.time12, value.time13, result.m, result.n, td);
 		 status(value.time14, value.time15, result.o, result.p, td);
 		 status(value.time16, value.time17, result.q, result.r, td);
-		 status(value.time18, value.time19, result.s, result.t, td);
+		 status(value.time18, value.time19, result.s, result.t, td); 
 
 		 document.querySelectorAll('td')[cel].innerHTML = value.user;
 		
@@ -152,10 +170,10 @@ const key = [];
 
 	  key.push(value);        
 	  
-	     if(key[0].chave1 != '') {
+ 	      if(key[0].chave1 != '') {
 		  pegarDoc(4, key[0].chave1, 0)	  
-		 }
-	     if(key[0].chave2 != '') {
+		 } 
+ 	      if(key[0].chave2 != '') {
 		  pegarDoc(10, key[0].chave2, 6)	  
 		 }
 		 if(key[0].chave3 != '') {
@@ -163,11 +181,11 @@ const key = [];
 		 } 
 	     if(key[0].chave4 != '') {
 		  pegarDoc(22, key[0].chave4, 18)	  
-		 }
+		 } 
 	     if(key[0].chave5 != '') {
 		  pegarDoc(28, key[0].chave5, 24)	  
 		 }
-	     if(key[0].chave6 != '') {
+	      if(key[0].chave6 != '') {
 		  pegarDoc(34, key[0].chave6, 30)	  
 		 }
 	     if(key[0].chave7 != '') {
@@ -181,7 +199,7 @@ const key = [];
 		 }
 	     if(key[0].chave10 != '') {
 		  pegarDoc(58, key[0].chave10, 54)	  
-		 }
+		 }   
       })
 
 
