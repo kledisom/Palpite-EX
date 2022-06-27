@@ -112,12 +112,12 @@ function pegarDoc(td, id, cel) {
  			if(pa == ra && pb == rb) {
 			 var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 			  document.querySelectorAll('td')[cel].innerHTML = pont + 10;			 
-				 
+				log("10 pontos") 
 			 }
 			 else if(pa > pb && ra > rb || pb > pa && rb > ra) {
 			  var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 			   document.querySelectorAll('td')[cel].innerHTML = pont + 5;
-			   				 
+			   log("5 pontos") 		 
 			  }
 			  else if(pa > pb && ra < rb || pb > pa && rb < ra) {
 			   var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
@@ -146,11 +146,11 @@ function pegarDoc(td, id, cel) {
 		 status(value.time5, value.time6, result.e, result.f, td);
 		 status(value.time7, value.time8, result.g, result.h, td);
 		 status(value.time9, value.time10, result.i, result.j, td); 
-		 status(value.time10, value.time11, result.k, result.l, td);
-		 status(value.time12, value.time13, result.m, result.n, td);
-		 status(value.time14, value.time15, result.o, result.p, td);
-		 status(value.time16, value.time17, result.q, result.r, td);
-		 status(value.time18, value.time19, result.s, result.t, td); 
+		 status(value.time11, value.time12, result.k, result.l, td);
+		 status(value.time13, value.time14, result.m, result.n, td);
+		 status(value.time15, value.time16, result.o, result.p, td);
+		 status(value.time17, value.time18, result.q, result.r, td);
+		 status(value.time19, value.time20, result.s, result.t, td); 
 
 		 document.querySelectorAll('td')[cel].innerHTML = value.user;
 		
@@ -172,7 +172,7 @@ const key = [];
 	  
  	      if(key[0].chave1 != '') {
 		  pegarDoc(4, key[0].chave1, 0)	  
-		 } 
+		 }
  	      if(key[0].chave2 != '') {
 		  pegarDoc(10, key[0].chave2, 6)	  
 		 }
@@ -198,7 +198,7 @@ const key = [];
 		  pegarDoc(52, key[0].chave9, 48)	  
 		 }
 	     if(key[0].chave10 != '') {
-		  pegarDoc(58, key[0].chave10, 54)	  
+		  pegarDoc(58, key[0].chave10, 54)	 
 		 }   
       })
 
@@ -585,7 +585,6 @@ function pegarTime() {
 }
 
 pegarTime()
-
 
 
 

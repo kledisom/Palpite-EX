@@ -21,7 +21,7 @@ const log = console.log;
 
 
 function update() {		
-		
+			
    var arr = [
       document.querySelectorAll("input")[0].value,
       document.querySelectorAll("input")[1].value,
@@ -62,3 +62,5 @@ function update() {
 	log.e("falha na alteração: ", e);
    })
 };
+
+
