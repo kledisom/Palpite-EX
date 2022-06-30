@@ -122,11 +122,12 @@ function pegarDoc(td, id, cel) {
 			  else if(pa > pb && ra < rb || pb > pa && rb < ra) {
 			   var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
 			   //document.querySelectorAll('td')[cel].innerHTML = pont + 5;	 	
-			   log("ok") 	
-			   	 
+			   log("ok") 	  	 
 			 }
-			 else if(pa == pb) {
-				log("solução")
+			 else if(pa == pb && ra == rb) {
+			  var pont = parseInt(document.querySelectorAll('td')[cel].innerHTML);
+			   document.querySelectorAll('td')[cel].innerHTML = pont + 5;
+			   log("5 pontos") 	
 			 }
 			 else if(pb > pa && rb < ra)
 			  {log("esta correto")}
